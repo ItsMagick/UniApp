@@ -10,6 +10,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.unistundenplan.R;
+import com.example.unistundenplan.ScheduleChanges;
+import com.example.unistundenplan.ScheduleFragment;
+import com.example.unistundenplan.Settings;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -29,9 +32,18 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        Fragment fragment = null;
+
+        switch (position){
+            case 0:
+                fragment = new ScheduleFragment();
+                break;
+            case 1:
+                fragment = new ScheduleChanges();
+            case 2:
+                fragment = new Settings();
+        }
+        return fragment;
     }
 
     @Nullable
