@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.unistundenplan.R;
 import com.example.unistundenplan.ScheduleChanges;
 import com.example.unistundenplan.ScheduleFragment;
-import com.example.unistundenplan.Settings;
+import com.example.unistundenplan.SettingsFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -42,7 +42,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new ScheduleChanges();
                 break;
             case 2:
-                fragment = new Settings();
+                fragment = new SettingsFragment();
                 break;
         }
         return fragment;

@@ -3,10 +3,13 @@ package com.example.unistundenplan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.unistundenplan.data.Course;
@@ -30,6 +33,17 @@ public class InitSettings extends AppCompatActivity {
         setContentView(R.layout.activity_init_settings);
         //}
        //so that you cannot navigate back to the activity after you have set the initial settings.
+        Button commit = findViewById(R.id.save_changes);
+
+    }
+
+    public void commitChanges(View view) {
+
+        new Handler().post(() ->{
+            Intent intent = new Intent(InitSettings.this, TabbedActivity.class);
+            InitSettings.this.startActivity(intent);
+            InitSettings.this.finish();
+        });
     }
 
    /* private boolean isFirstTime(){

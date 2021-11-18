@@ -17,7 +17,7 @@ public class SplashScreen extends AppCompatActivity {
         actionBar.hide();
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, TabbedActivity.class);
+            Intent intent = new Intent(SplashScreen.this, InitSettings.class);
             SplashScreen.this.startActivity(intent);
             SplashScreen.this.finish();
         }, 3000);
