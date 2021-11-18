@@ -46,6 +46,8 @@ public class InitSettings extends AppCompatActivity {
         });
     }
 
+
+
    /* private boolean isFirstTime(){
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         boolean ranBefore = preferences.getBoolean("RanBefore", false);

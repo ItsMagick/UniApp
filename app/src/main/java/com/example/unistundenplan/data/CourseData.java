@@ -3,11 +3,12 @@ package com.example.unistundenplan.data;
 import org.jsoup.Jsoup;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class CourseData {
 
 
-    public ArrayList <String> parseStudiengaenge(String studiengaengeEx){
+    public ArrayList <String> parseCourses(String studiengaengeEx){
         final ArrayList<String> studiengaenge = new ArrayList<>();
 
         try{
