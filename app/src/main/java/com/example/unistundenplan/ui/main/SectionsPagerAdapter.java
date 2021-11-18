@@ -40,8 +40,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 1:
                 fragment = new ScheduleChanges();
+                break;
             case 2:
                 fragment = new Settings();
+                break;
         }
         return fragment;
     }
