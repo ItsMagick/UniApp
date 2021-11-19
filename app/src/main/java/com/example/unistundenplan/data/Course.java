@@ -2,15 +2,15 @@ package com.example.unistundenplan.data;
 
 public class Course {
     private final String id;
-    private final String displayName;
+    private final String courseName;
 
     public Course(String id, String displayName) {
         this.id = id;
-        this.displayName = displayName;
+        this.courseName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getCourseName() {
+        return courseName;
     }
 
     public String getId() {
@@ -19,6 +19,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return getDisplayName();
+        return getCourseName();
     }
 }

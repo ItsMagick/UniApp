@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -16,6 +17,7 @@ import com.example.unistundenplan.data.Course;
 import com.example.unistundenplan.data.SemesterData;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 public class InitSettings extends AppCompatActivity {
 
     private ArrayList<Course> courses = new ArrayList<>();
+    private Spinner courseSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,15 @@ public class InitSettings extends AppCompatActivity {
         //}
        //so that you cannot navigate back to the activity after you have set the initial settings.
         Button commit = findViewById(R.id.save_changes);
+        courseSpinner = findViewById(R.id.courses);
+        courseSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+
+        ArrayAdapter<Course> arrayAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_spinner_dropdown_item, courses);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        courseSpinner.setAdapter(arrayAdapter);
+
+
 
     }
 
@@ -44,6 +56,11 @@ public class InitSettings extends AppCompatActivity {
             InitSettings.this.startActivity(intent);
             InitSettings.this.finish();
         });
+    }
+
+    public void loadCourses(View view) {
+
+
     }
 
 

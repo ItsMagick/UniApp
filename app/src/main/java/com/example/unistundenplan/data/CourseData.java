@@ -18,6 +18,7 @@ public class CourseData {
             for(org.jsoup.nodes.Element element : select.children()){
                 if(!element.text().contains("wählen"))
                     studiengaenge.add(element.text());
+                System.out.println(studiengaenge.add(element.text()));
             }
 
         }catch (Exception e){

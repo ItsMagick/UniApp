@@ -11,6 +11,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.unistundenplan.data.Course;
+import com.example.unistundenplan.data.CourseData;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +32,11 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Spinner spinner;
 
     public SettingsFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -49,26 +54,36 @@ public class SettingsFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            loadCourses();
+            //spinner = getView().findViewById(R.id.courses);
+            //ArrayList courses = CourseData.getCourses();
+            //ArrayAdapter <Course> adapter = new ArrayAdapter<Course>(this,);
+
+
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         return inflater.inflate(R.layout.fragment_settings2, container, false);
     }
-    public void loadCourses(){
+
+    public void loadCourses() {
         final Spinner spinner = getView().findViewById(R.id.courses);
         spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         List<String> categories = new ArrayList<String>();
@@ -79,9 +94,9 @@ public class SettingsFragment extends Fragment {
         categories.add("Item 5");
         categories.add("Item 6");
 
-       // ArrayAdapter<CharSequence> dataAdapter;
-       // dataAdapter = ArrayAdapter.createFromResource(
-       //         getActivity().getBaseContext(),
+        // ArrayAdapter<CharSequence> dataAdapter;
+        // dataAdapter = ArrayAdapter.createFromResource(
+        //         getActivity().getBaseContext(),
 //                categories,
 //                android.R.layout.simple_spinner_item);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_spinner_dropdown_item, categories);
