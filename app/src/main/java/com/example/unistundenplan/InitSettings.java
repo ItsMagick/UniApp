@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.unistundenplan.data.Course;
+import com.example.unistundenplan.data.CourseData;
 import com.example.unistundenplan.data.SemesterData;
 
 import java.util.ArrayList;
@@ -36,14 +37,14 @@ public class InitSettings extends AppCompatActivity {
         setContentView(R.layout.activity_init_settings);
         //}
        //so that you cannot navigate back to the activity after you have set the initial settings.
-        Button commit = findViewById(R.id.save_changes);
-        courseSpinner = findViewById(R.id.courses);
-        courseSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        //Button commit = findViewById(R.id.save_changes);
+        //courseSpinner = findViewById(R.id.courses);
+        //courseSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
 
-        ArrayAdapter<Course> arrayAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_spinner_dropdown_item, courses);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        courseSpinner.setAdapter(arrayAdapter);
+        //ArrayAdapter<Course> arrayAdapter = new ArrayAdapter<Course>(this, android.R.layout.simple_spinner_dropdown_item, courses);
+        //arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //courseSpinner.setAdapter(arrayAdapter);
 
 
 
