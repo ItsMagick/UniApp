@@ -1,5 +1,6 @@
 package com.example.unistundenplan;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -34,6 +35,9 @@ public class InitSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //if(isFirstTime()) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         setContentView(R.layout.activity_init_settings);
         //}
        //so that you cannot navigate back to the activity after you have set the initial settings.
@@ -57,11 +61,6 @@ public class InitSettings extends AppCompatActivity {
             InitSettings.this.startActivity(intent);
             InitSettings.this.finish();
         });
-    }
-
-    public void loadCourses(View view) {
-
-
     }
 
 

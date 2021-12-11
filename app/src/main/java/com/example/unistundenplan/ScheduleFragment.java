@@ -19,19 +19,14 @@ import com.example.unistundenplan.placeholder.PlaceholderContent;
  */
 public class ScheduleFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public ScheduleFragment() {
     }
 
-    // TODO: Customize parameter initialization
+
     @SuppressWarnings("unused")
     public static ScheduleFragment newInstance(int columnCount) {
         ScheduleFragment fragment = new ScheduleFragment();

@@ -17,35 +17,27 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class CourseData {
-    private static final ArrayList<String> coursesOut = new ArrayList<>();
+
     private static final ArrayList<Course> toCourses = new ArrayList<>();
 
     private static final OkHttpClient client = new OkHttpClient();
     private static final ExecutorService exe = Executors.newFixedThreadPool(2);
     private static final Handler handler = new Handler(Looper.getMainLooper());
 
-    public static ArrayList <String> parseCourses(String url){
-
-        try{
+    public static void parseCourses(String url){
             org.jsoup.nodes.Document doc = Jsoup.parse(url);
-            org.jsoup.nodes.Element select = doc.selectFirst("select[name=tx_stundenplan[studiengang]]");
-
-            for(org.jsoup.nodes.Element element : select.children()){
-                if(!element.text().contains("wählen")) {
-                    toCourses.add(new Course(element.val(), element.text()));
-                }
-            }
-
-        }catch (Exception e){
-        }
-        return coursesOut;
+            org.jsoup.nodes.Element select = doc.selectFirst("select[name=tx_stundenplan_stundenplan[studiengang]]");
+            select.children().stream().filter(e -> !e.text().contains("wählen")).forEach(e -> toCourses.add(new Course(e.val(), e.text())));
     }
 
     public static void getCourses(Consumer<Optional<ArrayList<Course>>> coursesCallback) {
-        if (coursesOut.isEmpty()) {
+        if (toCourses.isEmpty()) {
+
+
             Request request = new Request.Builder()
-                    .url("https://hof-university.de/studierende/info-service/stundenplaene/")
+                    .url("https://www.hof-university.de/studierende/info-service/stundenplaene/")
                     .build();
+
 
             exe.submit(() -> {
                 try (Response response = client.newCall(request).execute()) {

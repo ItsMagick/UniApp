@@ -14,6 +14,8 @@ import android.widget.Spinner;
 
 import com.example.unistundenplan.data.Course;
 import com.example.unistundenplan.data.CourseData;
+import com.example.unistundenplan.data.Semester;
+import com.example.unistundenplan.data.SemesterData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,7 @@ public class SettingsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private ArrayList<Course> coursesArrayList = new ArrayList<>();
+    private ArrayList<Semester> semestersArrayList = new ArrayList<>();
 
     private String mParam1;
     private String mParam2;
@@ -66,12 +69,6 @@ public class SettingsFragment extends Fragment {
 
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        loadCourses();
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,6 +76,14 @@ public class SettingsFragment extends Fragment {
 
 
         return inflater.inflate(R.layout.fragment_settings2, container, false);
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setCourseSpinnerSelectListener();
+        loadCourses();
+
+
     }
 
     public void loadCourses() {
@@ -94,10 +99,39 @@ public class SettingsFragment extends Fragment {
                 courseSpinner.setAdapter(adapter);
 
                 this.coursesArrayList = courses.get();
-            } else {
-                //showErrorAlert();
             }
         });
 
+    }
+    public void loadSemesters(Course course) {
+        SemesterData.getSemesters(course, semesters -> {
+            if (semesters.isPresent()) {
+                Spinner semesterSpinner = getView().findViewById(R.id.semesters);
+                String[] strings = semesters.get().stream()
+                        .map(Semester::toString)
+                        .collect(Collectors.toList()).toArray(new String[semesters.get().size()]);
+                System.out.println(strings);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, strings);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                semesterSpinner.setAdapter(adapter);
+
+                this.semestersArrayList = semesters.get();
+            }
+        });
+
+    }
+    private void setCourseSpinnerSelectListener() {
+        Spinner spinner = getView().findViewById(R.id.courses);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                loadSemesters(coursesArrayList.get(position));
+                System.out.println("hello");
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
     }
 }
