@@ -21,7 +21,7 @@ public class Semester {
         return id.split("_")[0];
     }
 
-    public String getDisplayName() {
+    public String getName() {
         return displayName;
     }
 

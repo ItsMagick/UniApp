@@ -12,5 +12,5 @@
         android:layout_height="match_parent"
         app:navGraph="@navigation/nav_graph_init"
         android:name="com.example.unistundenplan.SettingsFragment"
-        tools:layout="@layout/fragment_settings2" />
+        tools:layout="@layout/fragment_settings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

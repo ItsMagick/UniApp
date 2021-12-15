@@ -1,5 +1,7 @@
 package com.example.unistundenplan;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,15 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.unistundenplan.data.Course;
 import com.example.unistundenplan.data.CourseData;
+import com.example.unistundenplan.data.PersistentSettings;
 import com.example.unistundenplan.data.Semester;
 import com.example.unistundenplan.data.SemesterData;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -34,9 +37,9 @@ public class SettingsFragment extends Fragment {
     private ArrayList<Course> coursesArrayList = new ArrayList<>();
     private ArrayList<Semester> semestersArrayList = new ArrayList<>();
 
+
     private String mParam1;
     private String mParam2;
-    private Spinner spinner;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -70,21 +73,23 @@ public class SettingsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-
-        return inflater.inflate(R.layout.fragment_settings2, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setCourseSpinnerSelectListener();
         loadCourses();
+        Button submit = getView().findViewById(R.id.save_changes);
+        submit.setOnClickListener(listener ->{
+            submitChanges();
+        });
+
 
 
     }
+
 
     public void loadCourses() {
         CourseData.getCourses(courses -> {
@@ -134,4 +139,21 @@ public class SettingsFragment extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {}
         });
     }
+
+    //private void commitChanges(View view) {
+    //    new Handler().post(() ->{
+    //       startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
+    //    });
+    // }
+
+
+    private void submitChanges() {
+        Course course = coursesArrayList.get(((Spinner) getView().findViewById(R.id.courses)).getSelectedItemPosition());
+        Semester semester = semestersArrayList.get(((Spinner) getView().findViewById(R.id.semesters)).getSelectedItemPosition());
+        PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences("UNIAPP_SETTINGS", Context.MODE_PRIVATE));
+        settings.setCourse(course);
+        settings.setSemester(semester);
+        startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
+    }
+
 }

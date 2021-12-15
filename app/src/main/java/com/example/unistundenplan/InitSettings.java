@@ -28,9 +28,6 @@ import java.util.stream.Collectors;
 
 public class InitSettings extends AppCompatActivity {
 
-    private ArrayList<Course> courses = new ArrayList<>();
-    private Spinner courseSpinner;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,14 +51,6 @@ public class InitSettings extends AppCompatActivity {
 
     }
 
-    public void commitChanges(View view) {
-
-        new Handler().post(() ->{
-            Intent intent = new Intent(InitSettings.this, TabbedActivity.class);
-            InitSettings.this.startActivity(intent);
-            InitSettings.this.finish();
-        });
-    }
 
 
 
