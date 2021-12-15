@@ -3,6 +3,7 @@ package com.example.unistundenplan.data;
 import android.content.SharedPreferences;
 
 public class PersistentSettings {
+    public static final String UNIAPP_SETTINGS = "sebs.uniapp";
 
     private static final String COURSE_ID = "course_ID";
     private static final String COURSE_NAME = "course_name";

@@ -35,6 +35,8 @@ public class InitSettings extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+
+
         setContentView(R.layout.activity_init_settings);
         //}
        //so that you cannot navigate back to the activity after you have set the initial settings.

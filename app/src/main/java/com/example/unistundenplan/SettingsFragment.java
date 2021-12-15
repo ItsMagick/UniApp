@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
  * Use the {@link SettingsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class SettingsFragment extends Fragment {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,7 +61,6 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -132,7 +133,6 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 loadSemesters(coursesArrayList.get(position));
-                System.out.println("hello");
             }
 
             @Override
@@ -150,10 +150,11 @@ public class SettingsFragment extends Fragment {
     private void submitChanges() {
         Course course = coursesArrayList.get(((Spinner) getView().findViewById(R.id.courses)).getSelectedItemPosition());
         Semester semester = semestersArrayList.get(((Spinner) getView().findViewById(R.id.semesters)).getSelectedItemPosition());
-        PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences("UNIAPP_SETTINGS", Context.MODE_PRIVATE));
+        PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences(PersistentSettings.UNIAPP_SETTINGS, Context.MODE_PRIVATE));
         settings.setCourse(course);
         settings.setSemester(semester);
         startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
+        getActivity().finish();
     }
 
 }
