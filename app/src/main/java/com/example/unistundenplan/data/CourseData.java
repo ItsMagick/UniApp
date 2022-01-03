@@ -7,11 +7,11 @@ import org.jsoup.Jsoup;
 
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
+import Models.Course;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

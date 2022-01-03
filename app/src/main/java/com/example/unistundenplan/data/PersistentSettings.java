@@ -2,6 +2,9 @@ package com.example.unistundenplan.data;
 
 import android.content.SharedPreferences;
 
+import Models.Course;
+import Models.Semester;
+
 public class PersistentSettings {
     public static final String UNIAPP_SETTINGS = "sebs.uniapp";
 

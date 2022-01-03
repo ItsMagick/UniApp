@@ -12,12 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import Models.Course;
+
 import com.example.unistundenplan.placeholder.PlaceholderContent;
+
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
  */
 public class ScheduleFragment extends Fragment {
+
+    private ArrayList<Course> lessonsArrayList = new ArrayList<>();
 
     private static final String ARG_COLUMN_COUNT = "column-count";
 
@@ -63,4 +69,12 @@ public class ScheduleFragment extends Fragment {
         }
         return view;
     }
+    /*
+    public void loadLessons(){
+        LessonData.getLessons(lessons ->{
+
+        });
+    }
+
+     */
 }

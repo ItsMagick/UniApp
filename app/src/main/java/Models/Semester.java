@@ -1,4 +1,4 @@
-package com.example.unistundenplan.data;
+package Models;
 
 public class Semester {
     private final String id;

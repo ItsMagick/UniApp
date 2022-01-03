@@ -13,6 +13,9 @@ import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
+
+import Models.Course;
+import Models.Semester;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -35,7 +38,6 @@ public class SemesterData {
 
             exe.submit(() -> {
                 try (Response response = client.newCall(request).execute()) {
-
                     parseSemester(course, response.body().string());
 
                     handler.post(() -> semestersCallback.accept(Optional.of(semesters.get(course.getId()))));
@@ -51,12 +53,9 @@ public class SemesterData {
     }
     private static void parseSemester(Course course, String body) {
         semesters.put(course.getId(), new ArrayList<>());
-
         String semesterHtml = JsonParser.parseString(body).getAsJsonObject().get("semester").getAsString();
-
         org.jsoup.nodes.Document document = Jsoup.parse(semesterHtml);
         org.jsoup.nodes.Element select = document.selectFirst("select[id=semesterSelect]");
-        System.out.println(select);
         select.children().stream().filter(e -> !e.text().contains("wählen")).forEach(e -> semesters.get(course.getId()).add(new Semester(e.val(), e.text())));
     }
 }

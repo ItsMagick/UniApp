@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.example.unistundenplan.data.Course;
+import Models.Course;
 import com.example.unistundenplan.data.CourseData;
 import com.example.unistundenplan.data.PersistentSettings;
-import com.example.unistundenplan.data.Semester;
+import Models.Semester;
 import com.example.unistundenplan.data.SemesterData;
 
 import java.util.ArrayList;
@@ -45,9 +44,9 @@ public class SettingsFragment extends Fragment {
 
     public SettingsFragment() {
         // Required empty public constructor
-
     }
 
+    /*
     public static SettingsFragment newInstance(String param1, String param2) {
         SettingsFragment fragment = new SettingsFragment();
         Bundle args = new Bundle();
@@ -58,19 +57,15 @@ public class SettingsFragment extends Fragment {
         return fragment;
     }
 
+     */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            //spinner = getView().findViewById(R.id.courses);
-            //ArrayList courses = CourseData.getCourses();
-            //ArrayAdapter <Course> adapter = new ArrayAdapter<Course>(this,);
-
-
         }
-
     }
 
     @Override
@@ -86,9 +81,6 @@ public class SettingsFragment extends Fragment {
         submit.setOnClickListener(listener ->{
             submitChanges();
         });
-
-
-
     }
 
 
@@ -107,7 +99,6 @@ public class SettingsFragment extends Fragment {
                 this.coursesArrayList = courses.get();
             }
         });
-
     }
     public void loadSemesters(Course course) {
         SemesterData.getSemesters(course, semesters -> {
@@ -116,7 +107,6 @@ public class SettingsFragment extends Fragment {
                 String[] strings = semesters.get().stream()
                         .map(Semester::toString)
                         .collect(Collectors.toList()).toArray(new String[semesters.get().size()]);
-                System.out.println(strings);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, strings);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 semesterSpinner.setAdapter(adapter);
@@ -124,37 +114,30 @@ public class SettingsFragment extends Fragment {
                 this.semestersArrayList = semesters.get();
             }
         });
-
     }
+
     private void setCourseSpinnerSelectListener() {
         Spinner spinner = getView().findViewById(R.id.courses);
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 loadSemesters(coursesArrayList.get(position));
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
     }
 
-    //private void commitChanges(View view) {
-    //    new Handler().post(() ->{
-    //       startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
-    //    });
-    // }
-
-
     private void submitChanges() {
         Course course = coursesArrayList.get(((Spinner) getView().findViewById(R.id.courses)).getSelectedItemPosition());
         Semester semester = semestersArrayList.get(((Spinner) getView().findViewById(R.id.semesters)).getSelectedItemPosition());
+
         PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences(PersistentSettings.UNIAPP_SETTINGS, Context.MODE_PRIVATE));
+
         settings.setCourse(course);
         settings.setSemester(semester);
+
         startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
         getActivity().finish();
     }
-
 }
