@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.example.unistundenplan.Models.Course;
 
-import com.example.unistundenplan.MyItemRecyclerViewAdapter;
 import com.example.unistundenplan.R;
 import com.example.unistundenplan.placeholder.PlaceholderContent;
 

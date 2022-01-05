@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.unistundenplan.databinding.ActivityTabbedBinding;
-import com.example.unistundenplan.ui.main.SectionsPagerAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.unistundenplan.ui.Adapter.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class TabbedActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.unistundenplan.ui.main;
+package com.example.unistundenplan.ui.Adapter;
 
 import android.content.Context;
 
@@ -16,7 +16,7 @@ import com.example.unistundenplan.View.SettingsFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
+ * one of the tabs
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
