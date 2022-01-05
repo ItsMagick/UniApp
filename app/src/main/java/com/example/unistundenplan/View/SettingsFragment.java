@@ -1,4 +1,4 @@
-package com.example.unistundenplan;
+package com.example.unistundenplan.View;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import Models.Course;
-import com.example.unistundenplan.data.CourseData;
-import com.example.unistundenplan.data.PersistentSettings;
-import Models.Semester;
-import com.example.unistundenplan.data.SemesterData;
+import com.example.unistundenplan.Models.Course;
+import com.example.unistundenplan.Controller.CourseData;
+import com.example.unistundenplan.Controller.PersistentSettings;
+import com.example.unistundenplan.Models.Semester;
+import com.example.unistundenplan.Controller.SemesterData;
+import com.example.unistundenplan.R;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;

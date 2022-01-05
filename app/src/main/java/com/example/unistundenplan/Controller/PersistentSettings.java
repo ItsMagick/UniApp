@@ -1,9 +1,9 @@
-package com.example.unistundenplan.data;
+package com.example.unistundenplan.Controller;
 
 import android.content.SharedPreferences;
 
-import Models.Course;
-import Models.Semester;
+import com.example.unistundenplan.Models.Course;
+import com.example.unistundenplan.Models.Semester;
 
 public class PersistentSettings {
     public static final String UNIAPP_SETTINGS = "sebs.uniapp";

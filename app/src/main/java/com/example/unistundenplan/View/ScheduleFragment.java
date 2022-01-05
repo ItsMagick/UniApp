@@ -1,4 +1,4 @@
-package com.example.unistundenplan;
+package com.example.unistundenplan.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,8 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import Models.Course;
+import com.example.unistundenplan.Models.Course;
 
+import com.example.unistundenplan.MyItemRecyclerViewAdapter;
+import com.example.unistundenplan.R;
 import com.example.unistundenplan.placeholder.PlaceholderContent;
 
 import java.util.ArrayList;

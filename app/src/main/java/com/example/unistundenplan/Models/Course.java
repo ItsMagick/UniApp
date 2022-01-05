@@ -1,4 +1,4 @@
-package Models;
+package com.example.unistundenplan.Models;
 
 public class Course {
     private final String id;

@@ -1,4 +1,4 @@
-package Models;
+package com.example.unistundenplan.Models;
 
 import java.util.ArrayList;
 

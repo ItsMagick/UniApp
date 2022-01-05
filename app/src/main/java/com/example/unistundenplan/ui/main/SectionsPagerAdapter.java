@@ -10,9 +10,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.unistundenplan.R;
-import com.example.unistundenplan.ScheduleChanges;
-import com.example.unistundenplan.ScheduleFragment;
-import com.example.unistundenplan.SettingsFragment;
+import com.example.unistundenplan.View.ScheduleChanges;
+import com.example.unistundenplan.View.ScheduleFragment;
+import com.example.unistundenplan.View.SettingsFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

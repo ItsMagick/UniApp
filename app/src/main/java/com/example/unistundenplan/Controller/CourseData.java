@@ -1,4 +1,4 @@
-package com.example.unistundenplan.data;
+package com.example.unistundenplan.Controller;
 
 import android.os.Looper;
 import android.os.Handler;
@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
-import Models.Course;
+import com.example.unistundenplan.Models.Course;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

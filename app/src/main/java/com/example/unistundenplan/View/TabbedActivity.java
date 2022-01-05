@@ -1,4 +1,4 @@
-package com.example.unistundenplan;
+package com.example.unistundenplan.View;
 
 import android.os.Bundle;
 

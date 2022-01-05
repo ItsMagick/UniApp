@@ -1,4 +1,4 @@
-package com.example.unistundenplan;
+package com.example.unistundenplan.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.unistundenplan.R;
 
 public class SplashScreen extends AppCompatActivity {
 

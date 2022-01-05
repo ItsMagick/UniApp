@@ -13,17 +13,17 @@
         android:theme="@style/Theme.UniStundenplan" >
 
         <activity
-            android:name=".TabbedActivity"
+            android:name=".View.TabbedActivity"
             android:exported="true"
             android:label="@string/title_activity_tabbed"
             android:theme="@style/Theme.UniStundenplan.NoActionBar" />
 
         <activity
-            android:name=".InitSettings"
+            android:name=".View.InitSettings"
             android:exported="false" />
 
         <activity
-            android:name=".SplashScreen"
+            android:name=".View.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

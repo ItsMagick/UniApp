@@ -1,9 +1,11 @@
-package com.example.unistundenplan;
+package com.example.unistundenplan.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.unistundenplan.R;
 
 
 //A class for the initial setup dialogue to set your contents up for e.g. schedules
