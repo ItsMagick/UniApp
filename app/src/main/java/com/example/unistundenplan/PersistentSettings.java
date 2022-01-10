@@ -6,7 +6,7 @@ import com.example.unistundenplan.Models.Course;
 import com.example.unistundenplan.Models.Semester;
 
 public class PersistentSettings {
-    public static final String UNIAPP_SETTINGS = "sebs.uniapp";
+    public static final String SHARED_PREFERENCES_KEY = "sebs.uniapp";
 
     private static final String COURSE_ID = "course_ID";
     private static final String COURSE_NAME = "course_name";

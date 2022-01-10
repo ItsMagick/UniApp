@@ -26,11 +26,6 @@ import com.example.unistundenplan.View.Schedule.ScheduleTabbedActivity;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 
 public class SettingsFragment extends Fragment {
 
@@ -134,7 +129,7 @@ public class SettingsFragment extends Fragment {
         Course course = coursesArrayList.get(((Spinner) getView().findViewById(R.id.courses)).getSelectedItemPosition());
         Semester semester = semestersArrayList.get(((Spinner) getView().findViewById(R.id.semesters)).getSelectedItemPosition());
 
-        PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences(PersistentSettings.UNIAPP_SETTINGS, Context.MODE_PRIVATE));
+        PersistentSettings settings = new PersistentSettings(getActivity().getSharedPreferences(PersistentSettings.SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE));
 
         settings.setCourse(course);
         settings.setSemester(semester);
