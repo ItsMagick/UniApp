@@ -78,7 +78,6 @@ public class LessonData {
                 lessons.add(lesson);
 
             }
-
         }
     }
 

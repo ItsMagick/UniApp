@@ -1,4 +1,4 @@
-package com.example.unistundenplan.View;
+package com.example.unistundenplan.View.Init;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,10 +17,11 @@ import android.widget.Spinner;
 
 import com.example.unistundenplan.Models.Course;
 import com.example.unistundenplan.Controller.CourseData;
-import com.example.unistundenplan.Controller.PersistentSettings;
+import com.example.unistundenplan.PersistentSettings;
 import com.example.unistundenplan.Models.Semester;
 import com.example.unistundenplan.Controller.SemesterData;
 import com.example.unistundenplan.R;
+import com.example.unistundenplan.View.Schedule.ScheduleTabbedActivity;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -138,7 +139,7 @@ public class SettingsFragment extends Fragment {
         settings.setCourse(course);
         settings.setSemester(semester);
 
-        startActivity(new Intent().setClass(getActivity().getApplicationContext(), TabbedActivity.class));
+        startActivity(new Intent().setClass(getActivity().getApplicationContext(), ScheduleTabbedActivity.class));
         getActivity().finish();
     }
 }

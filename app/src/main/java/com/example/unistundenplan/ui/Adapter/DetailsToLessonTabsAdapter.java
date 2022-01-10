@@ -10,21 +10,21 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.unistundenplan.R;
-import com.example.unistundenplan.View.ScheduleChanges;
-import com.example.unistundenplan.View.ScheduleFragment;
-import com.example.unistundenplan.View.SettingsFragment;
+import com.example.unistundenplan.View.Schedule.ScheduleChanges;
+import com.example.unistundenplan.View.Schedule.ScheduleFragment;
+import com.example.unistundenplan.View.Init.SettingsFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the tabs
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class DetailsToLessonTabsAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_schedule, R.string.tab_changes, R.string.tab_settings};
     private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public DetailsToLessonTabsAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }

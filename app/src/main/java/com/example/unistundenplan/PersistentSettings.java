@@ -1,4 +1,4 @@
-package com.example.unistundenplan.Controller;
+package com.example.unistundenplan;
 
 import android.content.SharedPreferences;
 

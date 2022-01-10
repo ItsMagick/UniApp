@@ -1,4 +1,4 @@
-package com.example.unistundenplan.View;
+package com.example.unistundenplan.View.Init;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         actionBar.hide();
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashScreen.this, InitSettings.class);
+            Intent intent = new Intent(SplashScreen.this, InitSettingsActivity.class);
             SplashScreen.this.startActivity(intent);
             SplashScreen.this.finish();
         }, 3000);

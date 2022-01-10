@@ -1,4 +1,4 @@
-package com.example.unistundenplan.View;
+package com.example.unistundenplan.View.LessonDetails;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.unistundenplan.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ScheduleChanges#newInstance} factory method to
+ * Use the {@link ModuleHandbookFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScheduleChanges extends Fragment {
+public class ModuleHandbookFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class ScheduleChanges extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ScheduleChanges() {
+    public ModuleHandbookFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class ScheduleChanges extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ScheduleChanges.
+     * @return A new instance of fragment ModuleHandbookFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ScheduleChanges newInstance(String param1, String param2) {
-        ScheduleChanges fragment = new ScheduleChanges();
+    public static ModuleHandbookFragment newInstance(String param1, String param2) {
+        ModuleHandbookFragment fragment = new ModuleHandbookFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class ScheduleChanges extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_changes, container, false);
+        return inflater.inflate(R.layout.fragment_module_handbook, container, false);
     }
 }

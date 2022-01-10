@@ -1,4 +1,4 @@
-package com.example.unistundenplan.View;
+package com.example.unistundenplan.View.Init;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import com.example.unistundenplan.R;
 //A class for the initial setup dialogue to set your contents up for e.g. schedules
 
 
-public class InitSettings extends AppCompatActivity {
+public class InitSettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
