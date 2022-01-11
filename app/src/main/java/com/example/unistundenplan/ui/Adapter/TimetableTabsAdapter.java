@@ -18,13 +18,13 @@ import com.example.unistundenplan.View.Init.SettingsFragment;
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the tabs
  */
-public class DetailsToLessonTabsAdapter extends FragmentPagerAdapter {
+public class TimetableTabsAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_schedule, R.string.tab_changes, R.string.tab_settings};
     private final Context mContext;
 
-    public DetailsToLessonTabsAdapter(Context context, FragmentManager fm) {
+    public TimetableTabsAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }

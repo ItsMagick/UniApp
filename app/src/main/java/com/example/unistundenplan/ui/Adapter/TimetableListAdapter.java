@@ -12,11 +12,11 @@ import com.example.unistundenplan.R;
 
 import java.util.ArrayList;
 
-public class TimetableAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class TimetableListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final ArrayList<Object> elements;
 
-    public TimetableAdapter(ArrayList<Object> elements) {
+    public TimetableListAdapter(ArrayList<Object> elements) {
         this.elements = elements;
     }
 

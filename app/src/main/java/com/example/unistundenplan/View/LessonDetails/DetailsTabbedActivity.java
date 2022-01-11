@@ -9,11 +9,9 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
-import com.example.unistundenplan.View.ui.main.SectionsPagerAdapter;
+import com.example.unistundenplan.ui.Adapter.LessonDetailsTabAdapter;
 import com.example.unistundenplan.databinding.ActivityDetailsTabbedBinding;
 
 public class DetailsTabbedActivity extends AppCompatActivity {
@@ -27,7 +25,7 @@ public class DetailsTabbedActivity extends AppCompatActivity {
         binding = ActivityDetailsTabbedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        LessonDetailsTabAdapter sectionsPagerAdapter = new LessonDetailsTabAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;

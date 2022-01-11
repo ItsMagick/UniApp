@@ -1,4 +1,4 @@
-package com.example.unistundenplan.View.ui.main;
+package com.example.unistundenplan.ui.Adapter;
 
 import android.content.Context;
 
@@ -8,14 +8,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.unistundenplan.R;
+import com.example.unistundenplan.View.ui.main.PlaceholderFragment;
 
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class LessonDetailsTabAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public LessonDetailsTabAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }

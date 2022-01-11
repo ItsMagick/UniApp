@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.unistundenplan.databinding.ActivityTabbedBinding;
-import com.example.unistundenplan.ui.Adapter.DetailsToLessonTabsAdapter;
+import com.example.unistundenplan.ui.Adapter.TimetableTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.example.unistundenplan.PersistentSettings;
 
@@ -22,9 +22,9 @@ public class ScheduleTabbedActivity extends AppCompatActivity {
         binding = ActivityTabbedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        DetailsToLessonTabsAdapter detailsToLessonTabsAdapter = new DetailsToLessonTabsAdapter(this, getSupportFragmentManager());
+        TimetableTabsAdapter timetableTabsAdapter = new TimetableTabsAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
-        viewPager.setAdapter(detailsToLessonTabsAdapter);
+        viewPager.setAdapter(timetableTabsAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
