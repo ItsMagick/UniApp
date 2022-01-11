@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/activity_details_tabbed.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/activity_init_settings.xml" value="0.22" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/activity_splash.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/activity_tabbed.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_changes.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_chat.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_details_tabbed.xml" value="0.2786458333333333" />
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_main.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_module_handbook.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_notes.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_professor_details.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_schedule.xml" value="0.22" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_schedule_changes.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/Uni/Documents/GitHub/UniApp/app/src/main/res/layout/fragment_schedule_list.xml" value="0.22" />

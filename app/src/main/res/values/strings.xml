@@ -16,6 +16,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_details_tabbed">DetailsTabbedActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_module_book">Module Handbook</string>
+    <string name="tab_professor">Professor</string>
+    <string name="tab_notes">Notes</string>
+    <string name="tab_chat">Chat</string>
 </resources>

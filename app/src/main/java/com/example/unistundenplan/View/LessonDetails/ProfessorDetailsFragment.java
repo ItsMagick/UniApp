@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 import com.example.unistundenplan.R;
 
 
-
-public class ModuleHandbookFragment extends Fragment {
-
+public class ProfessorDetailsFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -21,10 +19,13 @@ public class ModuleHandbookFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ModuleHandbookFragment() { }
+    public ProfessorDetailsFragment() {
+        // Required empty public constructor
+    }
 
-    public static ModuleHandbookFragment newInstance(String param1, String param2) {
-        ModuleHandbookFragment fragment = new ModuleHandbookFragment();
+
+    public static ProfessorDetailsFragment newInstance(String param1, String param2) {
+        ProfessorDetailsFragment fragment = new ProfessorDetailsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -45,6 +46,6 @@ public class ModuleHandbookFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_module_handbook, container, false);
+        return inflater.inflate(R.layout.fragment_professor_details, container, false);
     }
 }
