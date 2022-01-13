@@ -22,7 +22,7 @@ import okhttp3.Response;
 
 public class SemesterData {
 
-    private static final ArrayList<Course> toCourses = new ArrayList<>();
+
     private static final HashMap<String, ArrayList<Semester>> semesters = new HashMap<>();
     private static final OkHttpClient client = new OkHttpClient();
     private static final ExecutorService exe = Executors.newFixedThreadPool(2);

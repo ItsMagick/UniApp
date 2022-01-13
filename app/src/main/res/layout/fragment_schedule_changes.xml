@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".View.Schedule.ScheduleChanges">
 
-    <TextView
+    <WebView
+        android:id="@+id/changes_webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Schedule chandges are displayed here as ListView" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

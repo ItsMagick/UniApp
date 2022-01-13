@@ -9,15 +9,27 @@
         android:id="@+id/schedule_recyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/schedule_webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/switchToDetails"
+            >
+
+        </WebView>
         <Button
             android:id="@+id/switchToDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LessonDetails"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">

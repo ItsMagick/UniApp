@@ -14,10 +14,6 @@ import com.example.unistundenplan.View.Schedule.ScheduleChanges;
 import com.example.unistundenplan.View.Schedule.ScheduleFragment;
 import com.example.unistundenplan.View.Init.SettingsFragment;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the tabs
- */
 public class TimetableTabsAdapter extends FragmentPagerAdapter {
 
     @StringRes

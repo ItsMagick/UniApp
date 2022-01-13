@@ -2,27 +2,15 @@ package com.example.unistundenplan.Models;
 
 public class Semester {
     private final String id;
-    private final String displayName;
+    private final String semesterName;
 
-    public Semester(String id, String displayName) {
+    public Semester(String id, String semesterName) {
         this.id = id.replace("#", "_");
-        this.displayName = displayName;
-    }
-
-    public String getYear() {
-        return id.split("_")[2];
-    }
-
-    public String getType() {
-        return id.split("_")[1];
-    }
-
-    public String getSemesterNumber() {
-        return id.split("_")[0];
+        this.semesterName = semesterName;
     }
 
     public String getName() {
-        return displayName;
+        return semesterName;
     }
 
     public String getId() {
@@ -31,6 +19,6 @@ public class Semester {
 
     @Override
     public String toString() {
-        return displayName;
+        return semesterName;
     }
 }

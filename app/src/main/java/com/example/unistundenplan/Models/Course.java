@@ -4,9 +4,9 @@ public class Course {
     private final String id;
     private final String courseName;
 
-    public Course(String id, String displayName) {
+    public Course(String id, String courseName) {
         this.id = id;
-        this.courseName = displayName;
+        this.courseName = courseName;
     }
 
     public String getCourseName() {
