@@ -8,9 +8,13 @@
 
     <fragment
         android:id="@+id/fragment_settings2"
+        android:name="com.example.unistundenplan.View.Init.SettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph_init"
-        android:name="com.example.unistundenplan.View.Init.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

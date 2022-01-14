@@ -21,9 +21,6 @@ import com.example.unistundenplan.View.LessonDetails.DetailsTabbedActivity;
 
 import java.util.ArrayList;
 
-/**
- * A fragment representing a list of Items.
- */
 public class ScheduleFragment extends Fragment {
 
 

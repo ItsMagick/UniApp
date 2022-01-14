@@ -1,4 +1,4 @@
-package com.example.unistundenplan.ui.Adapter;
+package com.example.unistundenplan.Adapter;
 
 import android.content.Context;
 

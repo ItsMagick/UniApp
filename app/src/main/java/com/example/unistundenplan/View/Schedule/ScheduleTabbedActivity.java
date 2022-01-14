@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.unistundenplan.databinding.ActivityTabbedBinding;
-import com.example.unistundenplan.ui.Adapter.TimetableTabsAdapter;
+import com.example.unistundenplan.Adapter.TimetableTabsAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.example.unistundenplan.PersistentSettings;
 

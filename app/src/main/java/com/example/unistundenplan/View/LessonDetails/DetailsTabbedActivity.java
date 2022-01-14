@@ -7,9 +7,7 @@ import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
-import com.example.unistundenplan.ui.Adapter.LessonDetailsTabAdapter;
+import com.example.unistundenplan.Adapter.LessonDetailsTabAdapter;
 import com.example.unistundenplan.databinding.ActivityDetailsTabbedBinding;
 
 public class DetailsTabbedActivity extends AppCompatActivity {
