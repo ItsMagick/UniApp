@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import com.example.unistundenplan.Models.Course;
@@ -66,6 +68,9 @@ public class ScheduleFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         WebView webview = getActivity().findViewById(R.id.schedule_webview);
+        webview.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webview.loadUrl("https://www.hof-university.de/studierende/info-service/stundenplaene.html");
         Button details = getView().findViewById(R.id.switchToDetails);
         details.setOnClickListener( e -> {
